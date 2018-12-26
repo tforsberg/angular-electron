@@ -1,7 +1,7 @@
 <app-main-nav></app-main-nav>
 
 
-<div class="container"
+<!-- <div class="container"
   [class.ready]="!!user">
   <input [formControl]="findControl"
     placeholder="GitHub username" />
@@ -10,6 +10,16 @@
     [user]="user"></app-user>
 
   <app-error *ngIf="error"></app-error>
+</div> -->
+
+<div class="container" [class.ready]="!!user">
+
+  <!-- <input [formControl]="findControl" placeholder="GitHub username" /> -->
+
+  <app-user *ngIf="user" [user]="user"></app-user>
+
+  <app-error *ngIf="error"></app-error>
+
 </div>
 
 
