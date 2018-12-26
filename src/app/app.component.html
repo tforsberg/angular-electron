@@ -1,2 +1,16 @@
 <app-main-nav></app-main-nav>
+
+
+<div class="container"
+  [class.ready]="!!user">
+  <input [formControl]="findControl"
+    placeholder="GitHub username" />
+
+  <app-user *ngIf="user"
+    [user]="user"></app-user>
+
+  <app-error *ngIf="error"></app-error>
+</div>
+
+
 <router-outlet></router-outlet>

@@ -39,6 +39,7 @@ import { GoogleMaterialDesignModule } from './modules/google-material-design.mod
 // ===  Local Services  ===
 // ========================
 import { ElectronService } from './providers/electron.service';
+import { GithubService } from './services/github.service';
 
 
 // ==========================
@@ -53,6 +54,8 @@ import { WebviewDirective } from './directives/webview.directive';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { UserComponent } from './components/user/user.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 // AoT requires an exported function for factories
@@ -65,7 +68,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     HomeComponent,
     WebviewDirective,
-    MainNavComponent
+    MainNavComponent,
+    UserComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +89,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [ElectronService],
+  providers: [ElectronService, GithubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
