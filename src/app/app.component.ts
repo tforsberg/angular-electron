@@ -47,14 +47,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.findControl.valueChanges
       .pipe(
-        // Фильтруем если введено меньше двух символов
         filter(value => value.length > 2),
-        // Ставим задержку одну секунду
         debounceTime(1000),
-        // Запрашиваем данные пользователя
         switchMap(value =>
           this.githubService.getUser(value).pipe(
-            // Обработка ошибок
             catchError(err => {
               this.user = null;
               this.error = true;
@@ -63,7 +59,6 @@ export class AppComponent implements OnInit {
           )
         )
       )
-      // Получение данных
       .subscribe(user => {
         this.user = user;
         this.error = false;

@@ -5,8 +5,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
+// import { FormControl } from '@angular/forms';
 
 // ======================
 // ===  NG Translate  ===
@@ -33,6 +34,7 @@ import '../polyfills';
 // ===  Local Modules  ===
 // =======================
 import { GoogleMaterialDesignModule } from './modules/google-material-design.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 // ========================
@@ -78,6 +80,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     AppRoutingModule,
     GoogleMaterialDesignModule,
+    ReactiveFormsModule,
 
     WjGridModule, WjChartModule,  // Wijmo Modules
 
